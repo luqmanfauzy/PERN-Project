@@ -6,7 +6,7 @@ import {
   createEmployees,
   editEmployees,
   deleteEmployees,
-} from "./controllers/employee.js";
+} from "../controllers/employee.js";
 
 router.get("/", getEmployees);
 
