@@ -18,6 +18,13 @@ app.use(bodyParser.json())
 
 app.use('/api/employee', employeeRoute)
 
+// Handle 404 errors
+app.use(function(req, res, next) {
+    const error = new Error('Not Found')
+    error.statusCode = 404
+    next(error)
+})
+
 // Global error handling middleware
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500
